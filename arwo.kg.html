@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ARWO.KG — Digital Agency</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #07070a;
+    color: white;
+}
+
+/* NAVBAR */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(7,7,10,.75);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.nav {
+    max-width: 1200px;
+    margin: auto;
+    height: 80px;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    color: #a855f7;
+}
+
+.logo span {
+    color: white;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #a855f7;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 120px 20px 80px;
+
+    background:
+        radial-gradient(circle at 50% 35%,
+        rgba(168,85,247,.25),
+        transparent 35%);
+}
+
+.hero-content {
+    max-width: 950px;
+}
+
+.small-title {
+    color: #b76cff;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 9vw, 120px);
+    line-height: .9;
+    letter-spacing: -7px;
+}
+
+.hero h1 span {
+    color: #a855f7;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 35px auto;
+
+    color: #999;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 28px;
+    border-radius: 12px;
+
+    background: #8b3dff;
+    color: white;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(139,61,255,.35);
+}
+
+.btn.dark {
+    background: #111116;
+    border: 1px solid #292933;
+}
+
+/* SERVICES */
+
+section {
+    padding: 120px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
+    font-size: 55px;
+    letter-spacing: -3px;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    color: #888;
+    max-width: 650px;
+    margin-bottom: 50px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.service {
+    padding: 40px;
+
+    min-height: 270px;
+
+    background: linear-gradient(
+        145deg,
+        #131319,
+        #09090d
+    );
+
+    border: 1px solid #272731;
+    border-radius: 25px;
+
+    transition: .4s;
+}
+
+.service:hover {
+    transform: translateY(-8px);
+    border-color: #a855f7;
+    box-shadow: 0 20px 70px rgba(168,85,247,.12);
+}
+
+.service-number {
+    color: #a855f7;
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+
+.service h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.service p {
+    color: #888;
+    line-height: 1.7;
+}
+
+/* ABOUT */
+
+.about {
+    background: #0b0b10;
+}
+
+.about-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about h2 {
+    font-size: 60px;
+    line-height: 1;
+}
+
+.about h2 span {
+    color: #a855f7;
+}
+
+.about-text {
+    color: #999;
+    line-height: 1.8;
+}
+
+/* PROCESS */
+
+.process {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+}
+
+.step {
+    padding: 30px;
+
+    background: #101015;
+    border: 1px solid #25252e;
+    border-radius: 20px;
+}
+
+.step b {
+    color: #a855f7;
+    font-size: 14px;
+}
+
+.step h3 {
+    margin: 25px 0 10px;
+}
+
+.step p {
+    color: #888;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* CTA */
+
+.cta {
+    text-align: center;
+
+    padding: 100px 30px;
+
+    border-radius: 35px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(168,85,247,.2),
+            transparent 60%
+        ),
+
+        #0e0c13;
+
+    border: 1px solid #30233c;
+}
+
+.cta h2 {
+    font-size: clamp(40px,6vw,75px);
+    letter-spacing: -4px;
+}
+
+.cta p {
+    color: #888;
+    margin: 25px auto 35px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 40px 20px;
+    border-top: 1px solid #222;
+    color: #666;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+/* MOBILE */
+
+@media(max-width:800px) {
+
+    nav {
+        display: none;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .about-box {
+        grid-template-columns: 1fr;
+    }
+
+    .process {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .section-title {
+        font-size: 42px;
+    }
+
+}
+
+@media(max-width:500px) {
+
+    .process {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        letter-spacing: -4px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<a href="#" class="logo">
+ARWO<span>.KG</span>
+</a>
+
+<nav>
+<a href="#services">Услуги</a>
+<a href="#about">О нас</a>
+<a href="#process">Процесс</a>
+<a href="#contact">Контакты</a>
+</nav>
+
+<a href="#contact" class="btn">
+Обсудить проект
+</a>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="small-title">
+ARWO DIGITAL AGENCY
+</div>
+
+<h1>
+DESIGN.<br>
+<span>CODE.</span><br>
+RESULT.
+</h1>
+
+<p>
+Создаём современные цифровые решения
+для бизнеса — от идеи и дизайна
+до разработки, серверов и поддержки.
+</p>
+
+<div class="buttons">
+
+<a href="#contact" class="btn">
+Начать проект →
+</a>
+
+<a href="#services" class="btn dark">
+Наши услуги
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="container">
+
+<h2 class="section-title">
+Наши услуги
+</h2>
+
+<p class="section-description">
+Всё необходимое для создания и развития
+вашего цифрового продукта — в одной команде.
+</p>
+
+
+<div class="services">
+
+<div class="service">
+
+<div class="service-number">
+01 / DESIGN
+</div>
+
+<h3>Дизайн</h3>
+
+<p>
+Логотипы, фирменный стиль, UI/UX,
+баннеры, рекламные креативы,
+социальные сети и презентации.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-number">
+02 / DEVELOPMENT
+</div>
+
+<h3>Разработка</h3>
+
+<p>
+Landing Page, корпоративные сайты,
+интернет-магазины, веб-приложения
+и индивидуальные решения.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-number">
+03 / SERVER
+</div>
+
+<h3>Серверы</h3>
+
+<p>
+Хостинг, домены, VPS/VDS,
+SSL, настройка серверов,
+резервные копии и безопасность.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-number">
+04 / SUPPORT
+</div>
+
+<h3>Поддержка</h3>
+
+<p>
+Техническое сопровождение,
+обновление сайтов, оптимизация,
+SEO и постоянная поддержка.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="container">
+
+<div class="about-box">
+
+<div>
+
+<h2>
+Всё для бизнеса
+<span>в одной команде.</span>
+</h2>
+
+</div>
+
+<div class="about-text">
+
+<p>
+ARWO.KG — digital agency,
+которая объединяет дизайн,
+разработку и цифровую инфраструктуру.
+</p>
+
+<br>
+
+<p>
+Мы создаём решения, которые
+выглядят современно, работают
+стабильно и помогают бизнесу
+развиваться.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section id="process">
+
+<div class="container">
+
+<h2 class="section-title">
+Как мы работаем
+</h2>
+
+<p class="section-description">
+От первой идеи до готового цифрового продукта.
+</p>
+
+
+<div class="process">
+
+<div class="step">
+<b>01</b>
+<h3>Идея</h3>
+<p>
+Изучаем вашу задачу,
+цели и аудиторию.
+</p>
+</div>
+
+<div class="step">
+<b>02</b>
+<h3>Дизайн</h3>
+<p>
+Создаём визуальную
+концепцию проекта.
+</p>
+</div>
+
+<div class="step">
+<b>03</b>
+<h3>Разработка</h3>
+<p>
+Превращаем дизайн
+в работающий продукт.
+</p>
+</div>
+
+<div class="step">
+<b>04</b>
+<h3>Запуск</h3>
+<p>
+Запускаем проект
+и обеспечиваем поддержку.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="cta">
+
+<h2>
+Готовы создать
+что-то новое?
+</h2>
+
+<p>
+Расскажите нам о своём проекте.
+</p>
+
+<a
+href=https://t.me/eer_designer
+target="_blank"
+class="btn"
+>
+Написать в Telegram →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer-inner">
+
+<div>
+© 2026 ARWO.KG
+</div>
+
+<div>
+Design · Code · Server · Support
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+window.addEventListener("scroll", function(){
+
+const header = document.querySelector("header");
+
+if(window.scrollY > 50){
+
+header.style.background = "rgba(7,7,10,.95)";
+
+}else{
+
+header.style.background = "rgba(7,7,10,.75)";
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
